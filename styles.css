@@ -1,0 +1,274 @@
+/* Profile Presets. Colors come from Discord's own CSS variables so it follows your theme. */
+
+/* Profile editor sidebar */
+
+.vc-pp-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.vc-pp-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vc-pp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.vc-pp-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100px;
+    padding: 0 0 8px;
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    color: var(--text-default, var(--text-normal));
+    background: var(--background-mod-subtle, var(--background-modifier-hover));
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vc-pp-tile:hover {
+    background: var(--background-mod-normal, var(--background-modifier-active));
+}
+
+.vc-pp-tile:focus-visible {
+    outline: 2px solid var(--focus-primary);
+    outline-offset: 2px;
+}
+
+.vc-pp-tile:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.vc-pp-tile-active {
+    box-shadow: inset 0 0 0 2px var(--brand-500);
+}
+
+.vc-pp-tile-name {
+    position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.vc-pp-tile-add {
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    color: var(--text-muted);
+    background: transparent;
+    border: 2px dashed var(--border-subtle, var(--background-modifier-accent));
+}
+
+.vc-pp-tile-add:hover {
+    color: var(--text-default, var(--text-normal));
+    background: var(--background-mod-subtle, var(--background-modifier-hover));
+}
+
+.vc-pp-tile-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: currentcolor;
+}
+
+.vc-pp-tile-plus svg {
+    color: var(--background-base-low, var(--background-secondary));
+}
+
+/* Thumbnails */
+
+.vc-pp-thumb {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.vc-pp-thumb-banner {
+    position: absolute;
+    inset: 0;
+    background: var(--background-base-lowest, var(--background-tertiary));
+}
+
+.vc-pp-thumb-banner img,
+.vc-pp-thumb-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vc-pp-thumb-avatar {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--background-base-lowest, var(--background-tertiary));
+}
+
+.vc-pp-thumb-tile {
+    position: absolute;
+    inset: 0;
+}
+
+.vc-pp-thumb-tile .vc-pp-thumb-banner {
+    bottom: auto;
+    height: 44px;
+    opacity: 0.9;
+}
+
+.vc-pp-thumb-tile .vc-pp-thumb-avatar {
+    top: 22px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 3px var(--background-base-low, var(--background-secondary));
+}
+
+.vc-pp-thumb-row {
+    width: 64px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.vc-pp-thumb-row .vc-pp-thumb-avatar {
+    left: 4px;
+    bottom: 4px;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 0 2px var(--modal-background, var(--background-base-low));
+}
+
+/* Presets window */
+
+.vc-pp-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vc-pp-save-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.vc-pp-save-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.vc-pp-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -8px;
+}
+
+.vc-pp-label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--header-secondary, var(--text-muted));
+}
+
+.vc-pp-list-links {
+    display: flex;
+    gap: 16px;
+}
+
+.vc-pp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0 -8px;
+}
+
+.vc-pp-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.vc-pp-row:hover {
+    background: var(--background-modifier-hover);
+}
+
+.vc-pp-row-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.vc-pp-row-name {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--header-primary, var(--text-default));
+}
+
+.vc-pp-row-date {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-muted);
+}
+
+.vc-pp-row-active .vc-pp-row-date {
+    color: var(--text-positive, var(--text-muted));
+}
+
+.vc-pp-icon-button {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--interactive-normal);
+    background: none;
+}
+
+.vc-pp-icon-button:hover {
+    color: var(--interactive-hover);
+    background: var(--background-modifier-hover);
+}
+
+.vc-pp-empty {
+    padding: 24px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
